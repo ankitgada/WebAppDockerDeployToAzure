@@ -7,7 +7,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["WebAppDockerDeployToAzure/WebAppDockerDeployToAzure.csproj", "WebAppDockerDeployToAzure/"]
+COPY ["WebAppDockerDeployToAzure.csproj", "WebAppDockerDeployToAzure/"]
 RUN dotnet restore "WebAppDockerDeployToAzure/WebAppDockerDeployToAzure.csproj"
 COPY . .
 WORKDIR "/src/WebAppDockerDeployToAzure"
