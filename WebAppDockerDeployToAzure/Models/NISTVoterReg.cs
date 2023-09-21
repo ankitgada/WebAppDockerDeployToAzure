@@ -14,7 +14,7 @@ namespace WebAppDockerDeployToAzure.Models
         public CoordinateType Type { get; set; }
 
         [JsonPropertyName("AdditionalInfo")]
-        public VriAdditionalInfo[] AdditionalInfo { get; set; }
+        public List<VriAdditionalInfo> AdditionalInfo { get; set; }
 
         [JsonPropertyName("GeneratedDate")]
         public DateTimeOffset? GeneratedDate { get; set; }
@@ -29,7 +29,7 @@ namespace WebAppDockerDeployToAzure.Models
         public string TransactionId { get; set; }
 
         [JsonPropertyName("Type")]
-        public VriVoterRequestType[] CoordinateType { get; set; }
+        public List<VriVoterRequestType> CoordinateType { get; set; }
 
         [JsonPropertyName("VendorApplicationId")]
         public string VendorApplicationId { get; set; }
@@ -71,7 +71,7 @@ namespace WebAppDockerDeployToAzure.Models
         public SubjectType Type { get; set; }
 
         [JsonPropertyName("ContactMethod")]
-        public VriContactMethod[] ContactMethod { get; set; }
+        public List<VriContactMethod> ContactMethod { get; set; }
 
         [JsonPropertyName("DateOfBirth")]
         public DateTimeOffset? DateOfBirth { get; set; }
@@ -110,10 +110,10 @@ namespace WebAppDockerDeployToAzure.Models
         public VriSignature Signature { get; set; }
 
         [JsonPropertyName("VoterClassification")]
-        public VriVoterClassification[] VoterClassification { get; set; }
+        public List<VriVoterClassification> VoterClassification { get; set; }
 
         [JsonPropertyName("VoterId")]
-        public VriVoterId[] VoterId { get; set; }
+        public List<VriVoterId> VoterId { get; set; }
     }
 
     public partial class VriContactMethod
@@ -131,7 +131,7 @@ namespace WebAppDockerDeployToAzure.Models
         public string Value { get; set; }
 
         [JsonPropertyName("Capability")]
-        public VriPhoneCapability[] Capability { get; set; }
+        public List<VriPhoneCapability> Capability { get; set; }
     }
 
     public partial class VriName
@@ -149,7 +149,7 @@ namespace WebAppDockerDeployToAzure.Models
         public string LastName { get; set; }
 
         [JsonPropertyName("MiddleName")]
-        public string[] MiddleName { get; set; }
+        public List<string> MiddleName { get; set; }
 
         [JsonPropertyName("Prefix")]
         public string Prefix { get; set; }
@@ -167,7 +167,7 @@ namespace WebAppDockerDeployToAzure.Models
         public string Abbreviation { get; set; }
 
         [JsonPropertyName("ExternalIdentifier")]
-        public VriExternalIdentifier[] ExternalIdentifier { get; set; }
+        public List<VriExternalIdentifier> ExternalIdentifier { get; set; }
 
         [JsonPropertyName("Name")]
         public string Name { get; set; }
@@ -313,7 +313,7 @@ namespace WebAppDockerDeployToAzure.Models
         public CompletePlaceNameType Type { get; set; }
 
         [JsonPropertyName("PlaceName")]
-        public AddrTypePlaceNameType[] PlaceName { get; set; }
+        public List<AddrTypePlaceNameType> PlaceName { get; set; }
 
         [JsonPropertyName("Separator")]
         public string Separator { get; set; }
