@@ -2,292 +2,294 @@
 using System.Collections.Generic;
 
 using System.Globalization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+//using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+//using Newtonsoft.Json.Converters;
 namespace WebAppDockerDeployToAzure.Models
 {
     public class NISTVoterReg
     {
-        [JsonProperty("@type")]
+        [JsonPropertyName("@type")]
         public CoordinateType Type { get; set; }
 
-        [JsonProperty("AdditionalInfo", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("AdditionalInfo")]
         public VriAdditionalInfo[] AdditionalInfo { get; set; }
 
-        [JsonProperty("GeneratedDate", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("GeneratedDate")]
         public DateTimeOffset? GeneratedDate { get; set; }
 
-        [JsonProperty("Issuer", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("Issuer")]
         public string Issuer { get; set; }
 
-        [JsonProperty("Subject", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("Subject")]
         public VriVoter Subject { get; set; }
 
-        [JsonProperty("TransactionId", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("TransactionId")]
         public string TransactionId { get; set; }
 
-        [JsonProperty("Type", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("Type")]
         public VriVoterRequestType[] CoordinateType { get; set; }
 
-        [JsonProperty("VendorApplicationId", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("VendorApplicationId")]
         public string VendorApplicationId { get; set; }
     }
 
     public partial class VriAdditionalInfo
     {
-        [JsonProperty("@type")]
+        [JsonPropertyName("@type")]
         public AdditionalInfoType Type { get; set; }
 
-        [JsonProperty("FileValue", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("FileValue")]
         public Vri FileValue { get; set; }
 
-        [JsonProperty("Name")]
+        [JsonPropertyName("Name")]
         public string Name { get; set; }
 
-        [JsonProperty("StringValue", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("StringValue")]
         public string StringValue { get; set; }
     }
 
     public partial class Vri
     {
-        [JsonProperty("@type")]
+        [JsonPropertyName("@type")]
         public PurpleType Type { get; set; }
 
-        [JsonProperty("Data")]
+        [JsonPropertyName("Data")]
         public string Data { get; set; }
 
-        [JsonProperty("FileName", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("FileName")]
         public string FileName { get; set; }
 
-        [JsonProperty("MimeType", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("MimeType")]
         public string MimeType { get; set; }
     }
 
     public partial class VriVoter
     {
-        [JsonProperty("@type")]
+        [JsonPropertyName("@type")]
         public SubjectType Type { get; set; }
 
-        [JsonProperty("ContactMethod", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("ContactMethod")]
         public VriContactMethod[] ContactMethod { get; set; }
 
-        [JsonProperty("DateOfBirth", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("DateOfBirth")]
         public DateTimeOffset? DateOfBirth { get; set; }
 
-        [JsonProperty("Ethnicity", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("Ethnicity")]
         public string Ethnicity { get; set; }
 
-        [JsonProperty("Gender", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("Gender")]
         public string Gender { get; set; }
 
-        [JsonProperty("MailingAddress", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("MailingAddress")]
         public VriAddress MailingAddress { get; set; }
 
-        [JsonProperty("Name")]
+        [JsonPropertyName("Name")]
         public VriName Name { get; set; }
 
-        [JsonProperty("Party", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("Party")]
         public VriParty Party { get; set; }
 
-        [JsonProperty("PreviousName", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("PreviousName")]
         public VriName PreviousName { get; set; }
 
-        [JsonProperty("PreviousResidenceAddress", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("PreviousResidenceAddress")]
         public VriAddress PreviousResidenceAddress { get; set; }
 
-        [JsonProperty("PreviousSignature", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("PreviousSignature")]
         public VriSignature PreviousSignature { get; set; }
 
-        [JsonProperty("ResidenceAddress")]
+        [JsonPropertyName("ResidenceAddress")]
         public VriAddress ResidenceAddress { get; set; }
 
-        [JsonProperty("ResidenceAddressIsMailingAddress", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("ResidenceAddressIsMailingAddress")]
         public bool? ResidenceAddressIsMailingAddress { get; set; }
 
-        [JsonProperty("Signature", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("Signature")]
         public VriSignature Signature { get; set; }
 
-        [JsonProperty("VoterClassification", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("VoterClassification")]
         public VriVoterClassification[] VoterClassification { get; set; }
 
-        [JsonProperty("VoterId", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("VoterId")]
         public VriVoterId[] VoterId { get; set; }
     }
 
     public partial class VriContactMethod
     {
-        [JsonProperty("@type")]
+        [JsonPropertyName("@type")]
         public ContactMethodType Type { get; set; }
 
-        [JsonProperty("OtherType", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("OtherType")]
         public string OtherType { get; set; }
 
-        [JsonProperty("Type")]
+        [JsonPropertyName("Type")]
         public VriContactMethodType VriContactMethodType { get; set; }
 
-        [JsonProperty("Value")]
+        [JsonPropertyName("Value")]
         public string Value { get; set; }
 
-        [JsonProperty("Capability", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("Capability")]
         public VriPhoneCapability[] Capability { get; set; }
     }
 
     public partial class VriName
     {
-        [JsonProperty("@type")]
+        [JsonPropertyName("@type")]
         public NameType Type { get; set; }
 
-        [JsonProperty("FirstName", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("FirstName")]
         public string FirstName { get; set; }
 
-        [JsonProperty("FullName", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("FullName")]
         public string FullName { get; set; }
 
-        [JsonProperty("LastName", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("LastName")]
         public string LastName { get; set; }
 
-        [JsonProperty("MiddleName", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("MiddleName")]
         public string[] MiddleName { get; set; }
 
-        [JsonProperty("Prefix", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("Prefix")]
         public string Prefix { get; set; }
 
-        [JsonProperty("Suffix", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("Suffix")]
         public string Suffix { get; set; }
     }
 
     public partial class VriParty
     {
-        [JsonProperty("@type")]
+        [JsonPropertyName("@type")]
         public PartyType Type { get; set; }
 
-        [JsonProperty("Abbreviation", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("Abbreviation")]
         public string Abbreviation { get; set; }
 
-        [JsonProperty("ExternalIdentifier", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("ExternalIdentifier")]
         public VriExternalIdentifier[] ExternalIdentifier { get; set; }
 
-        [JsonProperty("Name")]
+        [JsonPropertyName("Name")]
         public string Name { get; set; }
     }
 
     public partial class VriExternalIdentifier
     {
-        [JsonProperty("@type")]
+        [JsonPropertyName("@type")]
         public ExternalIdentifierType Type { get; set; }
 
-        [JsonProperty("OtherType", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("OtherType")]
         public string OtherType { get; set; }
 
-        [JsonProperty("Type")]
+        [JsonPropertyName("Type")]
         public VriIdentifierType VriExternalIdentifierType { get; set; }
 
-        [JsonProperty("Value")]
+        [JsonPropertyName("Value")]
         public string Value { get; set; }
     }
 
     public partial class VriSignature
     {
-        [JsonProperty("@type")]
+        [JsonPropertyName("@type")]
         public PreviousSignatureType Type { get; set; }
 
-        [JsonProperty("Date", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("Date")]
         public DateTimeOffset? Date { get; set; }
 
-        [JsonProperty("FileValue", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("FileValue")]
         public VriImage FileValue { get; set; }
 
-        [JsonProperty("OtherSource", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("OtherSource")]
         public string OtherSource { get; set; }
 
-        [JsonProperty("OtherType", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("OtherType")]
         public string OtherType { get; set; }
 
-        [JsonProperty("Source", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("Source")]
         public VriSignatureSource? Source { get; set; }
 
-        [JsonProperty("Type", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("Type")]
         public VriSignatureType? VriSignatureType { get; set; }
     }
 
     public partial class VriImage
     {
-        [JsonProperty("@type")]
+        [JsonPropertyName("@type")]
         public FluffyType Type { get; set; }
 
-        [JsonProperty("Data")]
+        [JsonPropertyName("Data")]
         public string Data { get; set; }
 
-        [JsonProperty("FileName", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("FileName")]
         public string FileName { get; set; }
 
-        [JsonProperty("MimeType", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("MimeType")]
         public string MimeType { get; set; }
     }
 
     public partial class VriVoterClassification
     {
-        [JsonProperty("@type")]
+        [JsonPropertyName("@type")]
         public VoterClassificationType Type { get; set; }
 
-        [JsonProperty("Assertion")]
+        [JsonPropertyName("Assertion")]
         public VriAssertionValue Assertion { get; set; }
 
-        [JsonProperty("OtherAssertion", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("OtherAssertion")]
         public string OtherAssertion { get; set; }
 
-        [JsonProperty("OtherType", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("OtherType")]
         public string OtherType { get; set; }
 
-        [JsonProperty("Type")]
+        [JsonPropertyName("Type")]
         public VriVoterClassificationType VriVoterClassificationType { get; set; }
     }
 
     public partial class VriVoterId
     {
-        [JsonProperty("@type")]
+        [JsonPropertyName("@type")]
         public VoterIdType Type { get; set; }
 
-        [JsonProperty("AttestNoSuchId", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("AttestNoSuchId")]
         public bool? AttestNoSuchId { get; set; }
 
-        [JsonProperty("DateOfIssuance", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("DateOfIssuance")]
         public DateTimeOffset? DateOfIssuance { get; set; }
 
-        [JsonProperty("FileValue", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("FileValue")]
         public Vri FileValue { get; set; }
 
-        [JsonProperty("OtherType", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("OtherType")]
         public string OtherType { get; set; }
 
-        [JsonProperty("StringValue", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("StringValue")]
         public string StringValue { get; set; }
 
-        [JsonProperty("Type")]
+        [JsonPropertyName("Type")]
         public VriVoterIdType VriVoterIdType { get; set; }
     }
 
     public partial class VriAddress
     {
-        [JsonProperty("@type")]
+        [JsonPropertyName("@type")]
         public VriAddressType Type { get; set; }
 
-        [JsonProperty("CompleteAddressNumber", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("CompleteAddressNumber")]
         public AddrTypeCompleteAddressNumberType CompleteAddressNumber { get; set; }
 
-        [JsonProperty("CompleteStreetName", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("CompleteStreetName")]
         public AddrTypeCompleteStreetNameType CompleteStreetName { get; set; }
 
-        [JsonProperty("CompletePlaceName", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("CompletePlaceName")]
         public AddrTypeCompletePlaceNameType CompletePlaceName { get; set; }
 
-        [JsonProperty("StateName", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("StateName")]
         public string StateName { get; set; }
 
-        [JsonProperty("ZipCode", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("ZipCode")]
         public string ZipCode { get; set; }
 
-        [JsonProperty("ZipPlus4", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("ZipPlus4")]
         public string ZipPlus4 { get; set; }
 
     }
@@ -295,10 +297,10 @@ namespace WebAppDockerDeployToAzure.Models
  
     public partial class AddrTypeCompleteAddressNumberType
     {
-        [JsonProperty("@type")]
+        [JsonPropertyName("@type")]
         public CompleteAddressNumberType Type { get; set; }
 
-        [JsonProperty("AddressNumber")]
+        [JsonPropertyName("AddressNumber")]
         public string AddressNumber { get; set; }
 
     }
@@ -307,66 +309,66 @@ namespace WebAppDockerDeployToAzure.Models
 
     public partial class AddrTypeCompletePlaceNameType
     {
-        [JsonProperty("@type")]
+        [JsonPropertyName("@type")]
         public CompletePlaceNameType Type { get; set; }
 
-        [JsonProperty("PlaceName")]
+        [JsonPropertyName("PlaceName")]
         public AddrTypePlaceNameType[] PlaceName { get; set; }
 
-        [JsonProperty("Separator", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("Separator")]
         public string Separator { get; set; }
     }
 
     public partial class AddrTypePlaceNameType
     {
-        [JsonProperty("@type")]
+        [JsonPropertyName("@type")]
         public PlaceNameType Type { get; set; }
 
-        [JsonProperty("ElementSequenceNumber", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("ElementSequenceNumber")]
         public long? ElementSequenceNumber { get; set; }
 
-        [JsonProperty("GNISFeatureID", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("GNISFeatureID")]
         public long? GnisFeatureId { get; set; }
 
-        [JsonProperty("PlaceNameType", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("PlaceNameType")]
         public AddrTypePlaceNameTypeType? PlaceNameType { get; set; }
 
-        [JsonProperty("Value")]
+        [JsonPropertyName("Value")]
         public string Value { get; set; }
     }
 
     public partial class AddrTypeCompleteStreetNameType
     {
-        [JsonProperty("@type")]
+        [JsonPropertyName("@type")]
         public CompleteStreetNameType Type { get; set; }
 
-        [JsonProperty("AttachedElement", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("AttachedElement")]
         public AddrTypeAttachedElementType? AttachedElement { get; set; }
 
-        [JsonProperty("StreetName")]
+        [JsonPropertyName("StreetName")]
         public string StreetName { get; set; }
 
-        [JsonProperty("StreetNamePostDirectional", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("StreetNamePostDirectional")]
         public AddrTypeStreetNamePreDirectionalType StreetNamePostDirectional { get; set; }
 
 
-        [JsonProperty("StreetNamePostType", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("StreetNamePostType")]
         public AddrTypeStreetNamePreTypeType StreetNamePostType { get; set; }
 
-        [JsonProperty("StreetNamePreDirectional", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("StreetNamePreDirectional")]
         public AddrTypeStreetNamePreDirectionalType StreetNamePreDirectional { get; set; }
 
     }
 
     public partial class AddrTypeStreetNamePreDirectionalType
     {
-        [JsonProperty("@type")]
+        [JsonPropertyName("@type")]
         public StreetNamePostDirectionalType Type { get; set; }
 
-        [JsonProperty("Separator", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("Separator")]
         public string Separator { get; set; }
 
-        [JsonProperty("Value")]
+        [JsonPropertyName("Value")]
         public string Value { get; set; }
     }
 
@@ -374,13 +376,13 @@ namespace WebAppDockerDeployToAzure.Models
 
     public partial class AddrTypeStreetNamePreTypeType
     {
-        [JsonProperty("@type")]
+        [JsonPropertyName("@type")]
         public StreetNamePostTypeType Type { get; set; }
 
-        [JsonProperty("Separator", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("Separator")]
         public string Separator { get; set; }
 
-        [JsonProperty("Value")]
+        [JsonPropertyName("Value")]
         public string Value { get; set; }
     }
 
